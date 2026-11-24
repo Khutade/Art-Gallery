@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART SPACE - Where Art Meets Soul</title>
+    <meta name="description" content="Discover extraordinary paintings at ART SPACE. Explore classical masterpieces and contemporary art with our curated collection spanning 500 years of artistic evolution.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">ART SPACE</a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                
+                <li class="nav-item">
+                    <a href="#collections" class="nav-link">
+                        Collections
+                        <span>▼</span>
+                    </a>
+                    <div class="dropdown">
+                        <div class="dropdown-columns">
+                            <div class="dropdown-column">
+                                <h4>Historical Periods</h4>
+                                <div class="dropdown-links">
+                                    <a href="#collections">Classical Masters</a>
+                                    <a href="#collections">Renaissance Art</a>
+                                    <a href="#collections">Impressionist Works</a>
+                                    <a href="#collections">Baroque Collection</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>Contemporary & Modern</h4>
+                                <div class="dropdown-links">
+                                    <a href="#collections">Contemporary Visions</a>
+                                    <a href="#collections">Abstract Expressions</a>
+                                    <a href="#collections">Digital Art</a>
+                                    <a href="#collections">Sculptures</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                             
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">
+                        About
+                        <span>▼</span>
+                    </a>
+                    <div class="dropdown">
+                        <div class="dropdown-columns">
+                            <div class="dropdown-column">
+                                <h4>Learn More</h4>
+                                <div class="dropdown-links">
+                                    <a href="#about">Our Story</a>
+                                    <a href="#about">Mission & Values</a>
+                                    <a href="#about">Curatorial Team</a>
+                                </div>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>Visit & Events</h4>
+                                <div class="dropdown-links">
+                                    <a href="#contact">Hours & Location</a>
+                                    <a href="#contact">Upcoming Events</a>
+                                    <a href="#contact">Private Tours</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="#featured" class="nav-link">Featured</a></li>
+                
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+
+                <li><a href="/login.html" class="nav-link" id="auth-link" data-testid="link-login">LOGIN</a></li>
+            </ul>
+            
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+            
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#home" onclick="closeMobileMenu()">Home</a>
+                <a href="#featured" onclick="closeMobileMenu()">Featured</a>
+                <a href="#collections" onclick="closeMobileMenu()">Collections</a>
+                <a href="#about" onclick="closeMobileMenu()">About</a>
+                <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+                <a href="/login.html" onclick="handleMobileAuth(event)" id="mobile-auth-link" data-testid="link-mobile-login">LOGIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="fade-in">"Where Art Meets <span class="highlight"><u>Soul"</u></span></h1>
+            <p class="fade-in delay-1">Discover extraordinary paintings that span centuries of human creativity, from classical masterpieces to contemporary innovations.</p>
+            <a href="#featured" class="btn-primary fade-in delay-2">Explore Collection</a>
+        </div>
+    </section>
+
+    <section id="featured" class="section white-bg">
+        <div class="container">
+            <h2 class="section-title">Featured Masterpieces</h2>
+            <p class="section-subtitle">Curated selections from our most treasured collection, each piece tells a unique story of artistic vision and cultural heritage.</p>
+            
+            <div class="featured-grid">
+                <div class="featured-image">
+                    <img src="https://picsum.photos/id/101/800/600" 
+                         alt="Classical landscape painting" 
+                         class="artwork-card" 
+                         onclick="openModal(this.src, this.getAttribute('data-description'))"
+                         data-description="A breathtaking landscape capturing a serene valley at dusk, a true classic of the 19th century Romantic movement.">
+                </div>
+                <div class="featured-content">
+                    <h3 class="featured-title">The Eternal Horizon</h3>
+                    <p class="featured-meta">Oil on Canvas, 1889</p>
+                    <p class="featured-description">
+                        This magnificent landscape captures the sublime beauty of nature through masterful brushwork and an extraordinary understanding of light.
+                    </p>
+                    <p class="featured-artist">Artist: Heinrich Zimmer</p>
+                </div>
+            </div>
+
+            <div class="featured-grid reverse">
+                <div class="featured-content">
+                    <h3 class="featured-title">Abstract Resonance</h3>
+                    <p class="featured-meta">Acrylic on Canvas, 2019</p>
+                    <p class="featured-description">
+                        A contemporary exploration of color and form that challenges traditional perspectives through bold geometric patterns.
+                    </p>
+                    <p class="featured-artist">Artist: Maya Chen</p>
+                </div>
+                <div class="featured-image">
+                    <img src="https://picsum.photos/id/201/800/600" 
+                         alt="Contemporary abstract painting" 
+                         class="artwork-card" 
+                         onclick="openModal(this.src, this.getAttribute('data-description'))"
+                         data-description="A vibrant contemporary piece, using sharp geometry and striking color contrast to evoke a sense of controlled chaos.">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="collections" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Collections</h2>
+            <p class="section-subtitle">Explore our diverse range of artistic expressions, from timeless classical works to cutting-edge contemporary pieces.</p>
+            
+            <div class="collection-section">
+                <h3 class="collection-title">Classical Masters</h3>
+                <div class="gallery-grid">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/301/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/301/600/800" alt="Portrait of Lady Catherine" data-description="A stunning oil portrait of a European noblewoman, showcasing the meticulous detail characteristic of 17th-century portraiture.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Portrait of Lady Catherine</div>
+                            <div class="artwork-period">17th Century</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/401/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/401/600/800" alt="Abundance Still Life" data-description="A Baroque-era still life featuring rich fruits and game, symbolizing wealth and the fleeting nature of life.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Abundance Still Life</div>
+                            <div class="artwork-period">18th Century</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/501/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/501/600/800" alt="Divine Ascension" data-description="An expressive religious painting from the Renaissance period, noted for its dramatic use of chiaroscuro and heavenly glow.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Divine Ascension</div>
+                            <div class="artwork-period">16th Century</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/602/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/602/600/800" alt="Pastoral Dreams" data-description="An idyllic 19th-century scene of shepherds and livestock in a sun-drenched European field, embodying the peace of rural life.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Pastoral Dreams</div>
+                            <div class="artwork-period">19th Century</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/702/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/702/600/800" alt="The Scholar's Study" data-description="A meticulously painted interior scene from the Dutch Golden Age, focusing on scholarly tools and books.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Scholar's Study</div>
+                            <div class="artwork-period">17th Century</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/803/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/803/600/800" alt="Venus in Mourning" data-description="A neoclassical depiction of a mythological figure, celebrated for its smooth finish and idealized forms.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Venus in Mourning</div>
+                            <div class="artwork-period">19th Century</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-section">
+                <h3 class="collection-title">Renaissance Art</h3>
+                <div class="gallery-grid">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/10/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/10/600/800" alt="Madonna and Child" data-description="An early Italian Renaissance work, characterized by symmetrical composition and soft religious devotion.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Madonna and Child</div>
+                            <div class="artwork-period">Tempera on Panel, 1450</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/20/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/20/600/800" alt="The Last Supper Sketch" data-description="A detailed study for a grand fresco, showing the dynamic grouping of figures typical of the High Renaissance.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Last Supper Sketch</div>
+                            <div class="artwork-period">Chalk on Paper, 1505</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/30/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/30/600/800" alt="Portrait of a Humanist" data-description="A stern and intellectual portrait, showcasing the individual focus of the Northern Renaissance.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Portrait of a Humanist</div>
+                            <div class="artwork-period">Oil on Wood, 1520</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/40/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/40/600/800" alt="Architectural Study" data-description="A perspective drawing showing idealized classical architecture, a key theme in Renaissance thought.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Architectural Study</div>
+                            <div class="artwork-period">Ink on Vellum, 1490</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/50/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/50/600/800" alt="The Annunciation" data-description="A vibrant religious work featuring deep jewel tones and elegant drapery, characteristic of Venetian masters.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Annunciation</div>
+                            <div class="artwork-period">Oil on Canvas, 1545</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/60/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/60/600/800" alt="Allegory of Virtue" data-description="A complex mythological scene, rich with symbolism and detailed figures, typical of Mannerism.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Allegory of Virtue</div>
+                            <div class="artwork-period">Oil on Canvas, 1580</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-section">
+                <h3 class="collection-title">Impressionist Works</h3>
+                <div class="gallery-grid modern">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/70/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/70/600/600" alt="Morning Fog, Rouen" data-description="A study of light and atmosphere in a French harbor, focusing on the transient effect of fog.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Morning Fog, Rouen</div>
+                            <div class="artwork-period">Oil on Canvas, 1872</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/80/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/80/600/600" alt="Dancer Adjusting Her Slipper" data-description="A candid glimpse of backstage life, captured with loose brushstrokes and soft illumination.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Dancer Adjusting Her Slipper</div>
+                            <div class="artwork-period">Pastel on Paper, 1880</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/90/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/90/600/600" alt="Picnic by the River" data-description="A joyful scene of leisure, characterized by bright, unmixed colors applied in small, distinct strokes.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Picnic by the River</div>
+                            <div class="artwork-period">Oil on Canvas, 1886</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/100/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/100/600/600" alt="Haystacks in Summer" data-description="One of a series of studies exploring how sunlight changes the appearance of a single object at different times of day.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Haystacks in Summer</div>
+                            <div class="artwork-period">Oil on Canvas, 1891</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/110/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/110/600/600" alt="Parisian Street Scene" data-description="A dynamic urban view, capturing the hustle and bustle of modern Parisian life with blurred movement.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Parisian Street Scene</div>
+                            <div class="artwork-period">Oil on Board, 1877</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/120/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/120/600/600" alt="Boating on the Seine" data-description="A vibrant depiction of recreational boating, using bold colors and simple forms.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Boating on the Seine</div>
+                            <div class="artwork-period">Oil on Canvas, 1888</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-section">
+                <h3 class="collection-title">Baroque Collection</h3>
+                <div class="gallery-grid">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/130/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/130/600/800" alt="The Conversion of Saul" data-description="A highly dramatic painting using intense chiaroscuro and foreshortening to capture a moment of divine intervention.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Conversion of Saul</div>
+                            <div class="artwork-period">Oil on Canvas, 1605</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/140/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/140/600/800" alt="Self-Portrait with Easel" data-description="A reflective portrait noted for its deep psychological insight and masterful texture rendering.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Self-Portrait with Easel</div>
+                            <div class="artwork-period">Oil on Wood, 1660</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/150/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/150/600/800" alt="The Triumph of Bacchus" data-description="A flamboyant, mythological scene full of movement, rich color, and sensuous forms.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Triumph of Bacchus</div>
+                            <div class="artwork-period">Oil on Canvas, 1638</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/160/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/160/600/800" alt="Girl with a Pearl Earring" data-description="A captivating portrait study utilizing soft light and simple composition to create an enigmatic masterpiece.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Girl with a Pearl Earring</div>
+                            <div class="artwork-period">Oil on Canvas, 1665</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/170/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/170/600/800" alt="Ecstasy of Saint Teresa" data-description="A sketch for a sculpture, demonstrating the dramatic, theatrical style central to the Italian Baroque.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Ecstasy of Saint Teresa</div>
+                            <div class="artwork-period">Chalk on Paper, 1647</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/180/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/180/600/800" alt="The Rape of the Sabine Women" data-description="An intense scene of historical violence, filled with contorted bodies and emotional energy.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Rape of the Sabine Women</div>
+                            <div class="artwork-period">Oil on Canvas, 1633</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collection-section">
+                <h3 class="collection-title">VAN GOGH SPECIALS</h3>
+                <div class="gallery-grid modern">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/902/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/902/600/600" alt="Sunflowers Revisited" data-description="An homage to Van Gogh's iconic series, rendered with modern texture and a slightly darker palette.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Sunflowers Revisited</div>
+                            <div class="artwork-period">2021</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/103/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/103/600/600" alt="The Starry Night Echo" data-description="A contemporary abstract piece inspired by the movement and color of Van Gogh's swirling skies.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Starry Night Echo</div>
+                            <div class="artwork-period">2020</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/203/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/203/600/600" alt="Self-Portrait in Blue" data-description="A modern, stylized digital self-portrait using thick, expressive lines characteristic of the artist.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Self-Portrait in Blue</div>
+                            <div class="artwork-period">2022</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/303/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/303/600/600" alt="Crows Over Wheat" data-description="A dramatic landscape featuring a stormy sky over a wheat field, reminiscent of Van Gogh's later, more turbulent works.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Crows Over Wheat</div>
+                            <div class="artwork-period">1890</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/403/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/403/600/600" alt="Cypresses Study" data-description="An oil painting focusing on the iconic swirling forms of cypress trees against a bright Mediterranean sky.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Cypresses Study</div>
+                            <div class="artwork-period">1889</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/503/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/503/600/600" alt="Irises in the Garden" data-description="A detailed view of a garden bed full of irises, capturing the intense colors and textures of flowers.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Irises in the Garden</div>
+                            <div class="artwork-period">1890</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-section">
+                <h3 class="collection-title">Digital Art</h3>
+                <div class="gallery-grid modern">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1000/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1000/600/600" alt="Cyberpunk Cityscape" data-description="A highly detailed digital illustration of a futuristic, neon-lit metropolis under a rainstorm.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Cyberpunk Cityscape</div>
+                            <div class="artwork-period">Digital Painting, 2023</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1001/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1001/600/600" alt="Fractal Grid" data-description="A complex 3D render showcasing intricate, infinitely repeating geometric patterns.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Fractal Grid</div>
+                            <div class="artwork-period">3D Rendering, 2021</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1002/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1002/600/600" alt="Glitch Portrait" data-description="A digital self-portrait intentionally corrupted with aesthetic 'glitch' effects to explore digital decay.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Glitch Portrait</div>
+                            <div class="artwork-period">Manipulation, 2022</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1003/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1003/600/600" alt="Procedural Landscape" data-description="A vast, surreal landscape generated entirely by algorithmic code, demonstrating generative art.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Procedural Landscape</div>
+                            <div class="artwork-period">Generative Art, 2023</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1004/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1004/600/600" alt="Pixel Cosmos" data-description="A modern piece inspired by retro computing, depicting a cosmic scene in a low-resolution pixel style.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Pixel Cosmos</div>
+                            <div class="artwork-period">Pixel Art, 2020</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1005/600/600', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1005/600/600" alt="Fluid Abstraction" data-description="A 2D digital simulation of fluid dynamics, resulting in an organic, flowing abstract composition.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Fluid Abstraction</div>
+                            <div class="artwork-period">Digital Abstract, 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-section">
+                <h3 class="collection-title">Sculptures</h3>
+                <div class="gallery-grid">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1006/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1006/600/800" alt="The Thinker's Torso" data-description="A classical bronze cast, capturing a powerful human figure in a state of deep contemplation.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Thinker's Torso</div>
+                            <div class="artwork-period">Bronze, 1904</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1007/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1007/600/800" alt="Marble Drapery Study" data-description="A Renaissance-style marble work emphasizing the complex folds and realism of cloth.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Marble Drapery Study</div>
+                            <div class="artwork-period">Marble, 1550</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1008/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1008/600/800" alt="Kinetic Wave" data-description="A modern kinetic sculpture made of polished stainless steel, designed to move with the air currents.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Kinetic Wave</div>
+                            <div class="artwork-period">Steel, 2018</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1009/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1009/600/800" alt="Terra Cotta Bust" data-description="An expressive portrait bust sculpted from raw clay, focusing on emotional intensity.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Terra Cotta Bust</div>
+                            <div class="artwork-period">Clay, 1720</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1010/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1010/600/800" alt="Found Object Assembly" data-description="A contemporary assemblage piece constructed from discarded mechanical parts and mixed media.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Found Object Assembly</div>
+                            <div class="artwork-period">Mixed Media, 2011</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1011/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1011/600/800" alt="Abstract Basalt" data-description="A large, minimalist sculpture carved from a block of volcanic basalt, showcasing rough texture.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Abstract Basalt</div>
+                            <div class="artwork-period">Basalt, 1975</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection-section">
+                <h3 class="collection-title">Nature Essentials</h3>
+                <p class="section-subtitle">A collection dedicated to the beauty of the natural world, featuring influential landscape paintings and photographs.</p>
+                <div class="gallery-grid">
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1040/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1040/600/800" alt="Mountain Peak Fog" data-description="A dramatic black and white photograph of fog rolling over a jagged mountain peak, emphasizing scale and mood.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Mountain Peak Fog</div>
+                            <div class="artwork-period">Photography, 1968</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1053/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1053/600/800" alt="Monet's Bridge Study" data-description="An impressionist painting focusing on a Japanese bridge over a water lily pond, a study of light and reflection.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Monet's Bridge Study</div>
+                            <div class="artwork-period">Oil on Canvas, 1900</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1084/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1084/600/800" alt="Desert Silence" data-description="A minimalist photograph capturing the vastness of a sand dune landscape under a clear, harsh light.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Desert Silence</div>
+                            <div class="artwork-period">Photography, 2015</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/107/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/107/600/800" alt="The Forest in Autumn" data-description="A romantic, pre- style painting of a dense forest canopy during the peak of autumn colors.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">The Forest in Autumn</div>
+                            <div class="artwork-period">Oil on Panel, 1855</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1036/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1036/600/800" alt="Coastal Storm" data-description="A dynamic seascape painting, depicting crashing waves and a lighthouse battling a powerful coastal storm.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Coastal Storm</div>
+                            <div class="artwork-period">Acrylic on Board, 2005</div>
+                        </div>
+                    </div>
+                    <div class="artwork-card" onclick="openModal('https://picsum.photos/id/1045/600/800', this.querySelector('img').getAttribute('data-description'))">
+                        <img src="https://picsum.photos/id/1045/600/800" alt="Rain in the Rice Fields" data-description="A modern photograph capturing a moody, overcast scene over flooded rice paddies in Southeast Asia.">
+                        <div class="artwork-info">
+                            <div class="artwork-title">Rain in the Rice Fields</div>
+                            <div class="artwork-period">Photography, 2019</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section white-bg">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="about-title">About ART SPACE</h2>
+                    <p class="about-text">
+                    ART SPACE is an online platform dedicated to showcasing a curated selection of artworks from various periods and styles. Visitors can explore paintings ranging from classical masterpieces to contemporary creations, all presented in a clean, accessible digital format.
+                    </p>
+                    <p class="about-text">
+                    This website is designed for viewing and appreciating art in a virtual setting. Each piece is displayed with basic details such as title, medium, year, and artist name, allowing users to engage with visual culture from anywhere.
+                    </p>
+                    <p class="about-text">
+                    ART SPACE does not claim ownership of the artworks featured. All images are used for educational and non-commercial purposes, with proper attribution where applicable.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Twitter">🐦</a>
+                        <a href="#" title="YouTube">📺</a>
+                    </div>
+                    <p class="newsletter">
+                        Subscribe to our newsletter for exhibition updates and exclusive events.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-logo">ART SPACE</div>
+                <div class="copyright">© 2024 ART SPACE. All rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content-wrapper">
+            <button class="modal-close" onclick="closeModal(event)">×</button>
+            <img id="modalImage" src="" alt="Artwork">
+            <div id="modalDescription" class="modal-description"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
